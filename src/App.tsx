@@ -1,4 +1,4 @@
-import ThemeSwitcher from "./components/theme-switcher";
+import { Container } from "./design-pattern/container-presentational/container/container";
 
 function App() {
   return (
@@ -22,8 +22,11 @@ function App() {
     //   <RenderList data={games} resourceName="games" dataToRender={ListItem} />
     // </Modal>
 
-    // 4. useLocalStorage
-    <ThemeSwitcher />
+    // 4. Container/Presentational
+    <Container />
+
+    // 5. custom hooks
+    // <ThemeSwitcher />
   );
 }
 
