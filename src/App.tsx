@@ -1,7 +1,4 @@
-import { games } from "./data";
-import Modal from "./design-pattern/layout/modal/modal";
-import ListItem from "./design-pattern/layout/render-list/list-item";
-import RenderList from "./design-pattern/layout/render-list/render-list";
+import ThemeSwitcher from "./components/theme-switcher";
 
 function App() {
   return (
@@ -21,9 +18,12 @@ function App() {
     // </div>
 
     // 3. Modal
-    <Modal>
-      <RenderList data={games} resourceName="games" dataToRender={ListItem} />
-    </Modal>
+    // <Modal>
+    //   <RenderList data={games} resourceName="games" dataToRender={ListItem} />
+    // </Modal>
+
+    // 4. useLocalStorage
+    <ThemeSwitcher />
   );
 }
 
