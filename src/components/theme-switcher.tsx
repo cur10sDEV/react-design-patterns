@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useDebouceValue } from "../hooks/useDebouce";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const ThemeSwitcher = () => {
   const { storedValue, setValue } = useLocalStorage("theme", "light");
   const [theme, setTheme] = useState(storedValue);
+  const debouncedThemeValue = useDebouceValue(theme, 1000);
 
   const toggleTheme = () => {
     const newValue = theme === "light" ? "dark" : "light";
@@ -18,7 +20,7 @@ const ThemeSwitcher = () => {
         (theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black")
       }
     >
-      <h1>Current Theme: {theme}</h1>
+      <h1>Current Theme: {debouncedThemeValue}</h1>
       <button
         className={
           "border py-2 px-4 rounded-md cursor-pointer hover:scale-105 transition-transform duration-200"
