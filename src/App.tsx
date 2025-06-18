@@ -1,4 +1,4 @@
-import { EnhancedProfile } from "./design-pattern/hoc/profile";
+import ButtonFactory from "./design-pattern/factory/button-factory";
 
 function App() {
   return (
@@ -37,9 +37,16 @@ function App() {
     // />
 
     // 7. HOC (Higher Order Components)
-    <EnhancedProfile />
+    // <EnhancedProfile />
 
-    // 7. custom hooks
+    // 8. Factory
+    <div className="space-x-2 m-4">
+      <ButtonFactory variant="primary" label="Primary" />
+      <ButtonFactory variant="secondary" label="Secondary" />
+      <ButtonFactory variant="danger" label="Danger" />
+    </div>
+
+    // 9. custom hooks
     // <ThemeSwitcher />
   );
 }
