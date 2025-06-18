@@ -1,4 +1,4 @@
-import { Container } from "./design-pattern/container-presentational/container/container";
+import MouseTracker from "./design-pattern/render-prop/mouse-tracker";
 
 function App() {
   return (
@@ -23,9 +23,20 @@ function App() {
     // </Modal>
 
     // 4. Container/Presentational
-    <Container />
+    // <Container />
 
-    // 5. custom hooks
+    // 6. Render Props
+    <MouseTracker
+      render={(position) => (
+        <>
+          <h1>The mouse position is</h1>
+          <h2>X: {position.x}</h2>
+          <h2>Y: {position.y}</h2>
+        </>
+      )}
+    />
+
+    // 7. custom hooks
     // <ThemeSwitcher />
   );
 }
